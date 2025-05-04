@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --color-bg: #F3F6F9;
+    --color-container-bg: #FFF;
+    --color-primary: #7F63F4;
+    --font-size-base: 62.5%;
+    --font-size-large: 75%;
+    --font-size-medium: 56.25%;
+    --font-size-small: 50%;
+    --font-size-xsmall: 40%;
+    --font-primary: 'Roboto', sans-serif;
+
+    --radius-s: 4px;
+
+    --shadow-s: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    --border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    height: 100vh;
+    font-size: var(--font-size-base);
+    font-family: var(--font-primary), sans-serif;
+    background: var(--color-bg);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+
+main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: start;
+    gap: 4rem;
+}
+
+.section-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+}
+
+.horizontal {
+    flex-direction: row;
+}
+
+.container, .container form {
+    background-color: var(--color-container-bg);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    box-shadow: var(--shadow-s);
+    padding: 2rem;
+    border-radius: var(--radius-s);
+
+    fieldset {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    legend {
+        font-size: 2.4rem;
+        font-weight: 400;
+        margin-bottom: 2rem;
+    }
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+
+    input {
+        padding: 1rem;
+        margin-top: 1rem;
+        font-size: 1.6rem;
+        font-weight: 400;
+        text-transform: lowercase;
+        border: var(--border);
+        border-radius: var(--radius-s);
+
+    }
+
+    label {
+        font-size: 1.6rem;
+        font-weight: 400;
+        text-transform: capitalize;
+    }
+
+    &:has(input:required) label::after {
+        content: " *";
+        color: red;
+    }
+}
+
+.checkbox-container {
+    .input[type="checkbox"] {
+
+    }
+}
+
+
+.button-container {
+    display: flex;
+    gap: 1rem;
+
+    .button--primary {
+        padding: 0.5rem 2rem;
+        border: var(--border);
+        border-radius: var(--radius-s);
+        background-color: var(--color-primary);
+        color: #FFF;
+        cursor: pointer;
+    }
+
+    .button--secondary {
+        padding: 1rem 2rem;
+        border: var(--border);
+        border-radius: var(--radius-s);
+        background-color: transparent;
+        color: #000;
+        cursor: pointer;
+    }
+}
+
