@@ -59,7 +59,10 @@ main {
 }
 
 .horizontal {
-    flex-direction: row;
+    flex-direction: row !important;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
 }
 
 .container, .container form {
@@ -70,6 +73,7 @@ main {
     box-shadow: var(--shadow-s);
     padding: 2rem;
     border-radius: var(--radius-s);
+    min-height: 35rem;
 
     fieldset {
         display: flex;
@@ -89,6 +93,7 @@ main {
     flex-direction: column;
 
     input {
+        flex: 3;
         padding: 1rem;
         margin-top: 1rem;
         font-size: 1.6rem;
@@ -96,10 +101,11 @@ main {
         text-transform: lowercase;
         border: var(--border);
         border-radius: var(--radius-s);
-
+        min-width: 20rem;
     }
 
     label {
+        flex: 1;
         font-size: 1.6rem;
         font-weight: 400;
         text-transform: capitalize;
@@ -112,8 +118,39 @@ main {
 }
 
 .checkbox-container {
-    .input[type="checkbox"] {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: start;
 
+    input[type="checkbox"]:not(:checked) {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 1.6rem;
+        height: 1.6rem;
+        border-radius: var(--radius-s);
+        border: var(--border);
+    }
+
+    input[type="checkbox"]:checked {
+        width: 1.6rem;
+        height: 1.6rem;
+        accent-color: var(--color-primary);
+        border-radius: var(--radius-s);
+        border: none;
+    }
+
+    label {
+        font-size: 1.6rem;
+        font-weight: 400;
+        text-transform: capitalize;
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    &:has(input:required) label::after {
+        content: " *";
+        color: red;
     }
 }
 
