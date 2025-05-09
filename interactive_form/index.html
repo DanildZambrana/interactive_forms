@@ -1,72 +1,423 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Formularios interactivos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms UI</title>
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-<main>
+<div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h1>Forms</h1>
+            <button class="close-btn"><i class="fas fa-times"></i></button>
+        </div>
 
-    <div class="section-wrapper horizontal">
-        <form class="container">
-            <fieldset>
-                <legend>Basic Forms</legend>
+        <div class="sidebar-section">
+            <h2>NAVIGATION</h2>
+            <ul>
+                <li><i class="fas fa-tachometer-alt"></i> Dashboard</li>
+                <li><i class="fas fa-columns"></i> Layouts</li>
+                <li><i class="fas fa-envelope"></i> Mailbox</li>
+                <li><i class="fas fa-shopping-cart"></i> Ecommerce</li>
+            </ul>
+        </div>
 
-                <div class="input-container">
-                    <label for="email-1">Email address</label>
-                    <input id="email-1" type="email" placeholder="contact@danild.dev" required>
-                </div>
+        <div class="sidebar-section">
+            <h2>APPS</h2>
+            <ul>
+                <li><i class="fas fa-calendar"></i> Calendar</li>
+                <li><i class="fas fa-comment"></i> Messenger</li>
+                <li><i class="fas fa-address-book"></i> Contacts</li>
+                <li><i class="fas fa-file"></i> File Manager</li>
+                <li><i class="fas fa-tasks"></i> To Do</li>
+                <li><i class="fas fa-newspaper"></i> News Feed</li>
+            </ul>
+        </div>
+    </aside>
 
-                <div class="input-container">
-                    <label for="password-1">Contraseña</label>
-                    <input id="password-1" type="password" placeholder="***********" required>
-                </div>
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <h1>Basic Forms</h1>
+            <div class="breadcrumb">
+                <span>Home</span> &gt; <span>Forms</span> &gt; <span>Basic Forms</span>
+            </div>
+        </header>
 
-                <div class="checkbox-container">
-                    <input type="checkbox" id="check-me-1">
-                    <label for="check-me-1">Check Me Out</label>
-                </div>
+        <!-- Forms Grid -->
+        <div class="forms-grid">
+            <!-- Basic Forms -->
+            <section class="form-card">
+                <h2>Basic Forms</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="email">Email Address*</label>
+                        <input type="email" id="email" placeholder="name@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password*</label>
+                        <input type="password" id="password" placeholder="••••••••••">
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox"> Check Me Out
+                        </label>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-secondary">Cancel</button>
+                    </div>
+                </form>
+            </section>
 
-                <div class="button-container">
-                    <button type="submit" class="button--primary">Submit</button>
-                    <button type="button" class="button--secondary">Cancel</button>
-                </div>
+            <!-- Horizontal Forms -->
+            <section class="form-card">
+                <h2>Horizontal Forms</h2>
+                <form class="horizontal-form">
+                    <div class="form-group">
+                        <label for="h-email">Email Address*</label>
+                        <div class="input-wrapper">
+                            <input type="email" id="h-email" placeholder="name@example.com">
+                            <small>Please input your real email</small>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="h-password">Password*</label>
+                        <div class="input-wrapper">
+                            <input type="password" id="h-password" placeholder="••••••••••">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label></label>
+                        <div class="input-wrapper">
+                            <label class="checkbox-label">
+                                <input type="checkbox"> Remember Me
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-actions right">
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+                    </div>
+                </form>
+            </section>
 
-            </fieldset>
-        </form>
-        <form class="container">
-            <fieldset>
-                <legend>Horizontal Forms</legend>
+            <!-- Inline Forms -->
+            <section class="form-card full-width">
+                <h2>Inline Forms</h2>
+                <form class="inline-form">
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox"> Remember Me
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </section>
 
-                <div class="input-container horizontal">
-                    <label for="email-2">Email address</label>
-                    <input id="email-2" type="email" placeholder="contact@danild.dev" required>
-                </div>
+            <!-- Basic Inputs -->
+            <section class="form-card horizontal-form">
+                <h2>Basic Inputs</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="basic-input">Basic Input</label>
+                        <input type="text" id="basic-input" placeholder="Basic text">
+                    </div>
+                    <div class="form-group">
+                        <label for="placeholder">Placeholder</label>
+                        <input type="text" id="placeholder" placeholder="This text is placeholder">
+                    </div>
+                    <div class="form-group">
+                        <label for="password-input">Password</label>
+                        <input type="password" id="password-input" placeholder="Password Input">
+                    </div>
+                    <div class="form-group">
+                        <label for="read-only">Read Only</label>
+                        <input type="text" id="read-only" readonly value="You can't change me">
+                    </div>
+                    <div class="form-group">
+                        <label for="disable-input">Disable Input</label>
+                        <input type="text" id="disable-input" disabled placeholder="Disable text">
+                    </div>
+                    <div class="form-group">
+                        <label for="select-box">Select Box</label>
+                        <select id="select-box">
+                            <option>Select one value Only</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="round-input">Round Input</label>
+                        <input type="text" id="round-input" class="round" placeholder="Round outlined input">
+                    </div>
+                    <div class="form-group">
+                        <label for="maximum-length">Maximum Length</label>
+                        <input type="text" id="maximum-length" maxlength="6"
+                               placeholder="Limited input to 6 characters">
+                    </div>
+                    <div class="form-group">
+                        <label for="static-text">Static Text</label>
+                        <div id="static-text" class="static-text">name@example.com</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="color">Color</label>
+                        <input type="color" id="color" value="#563d7c">
+                    </div>
+                    <div class="form-group">
+                        <label for="upload-file">Upload File</label>
+                        <input type="file" id="upload-file" class="file-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="textarea">Textarea</label>
+                        <textarea id="textarea" placeholder="Textarea"></textarea>
+                    </div>
+                </form>
+            </section>
 
-                <div class="input-container horizontal">
-                    <label for="password-2">Contraseña</label>
-                    <input id="password-2" type="password" placeholder="***********" required>
-                </div>
+            <!-- Input Groups -->
+            <section class="form-card tagged-inputs">
+                <h2>Input Groups</h2>
+                <form>
+                    <div class="form-group">
+                        <label for="input-groups">Input Groups</label>
+                        <div class="input-group">
+                            <span class="input-group-addon">@</span>
+                            <input type="text" id="input-groups" placeholder="Username">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <input type="text">
+                            <span class="input-group-addon">.00</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon">$</span>
+                            <input type="text">
+                            <span class="input-group-addon">.00</span>
+                        </div>
+                    </div>
 
-                <div class="checkbox-container">
-                    <input type="checkbox" id="check-me-2">
-                    <label for="check-me-2">Check Me Out</label>
-                </div>
+                    <div class="form-group">
+                        <label for="input-groups-2">Input Groups</label>
+                        <div class="input-group">
+                            <input type="text" id="input-groups-2" placeholder="Username">
+                            <span class="input-group-addon"><i class="fas fa-user"></i></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group-md">
+                            <input type="text" placeholder="Username">
+                            <span class="input-group-addon"><i class="fas fa-user"></i></span>
+                        </div>
+                    </div>
 
-                <div class="button-container">
-                    <button type="submit" class="button--primary">Submit</button>
-                    <button type="button" class="button--secondary">Cancel</button>
-                </div>
+                    <div class="form-group">
+                        <div class="input-group-sm">
+                            <input type="text" placeholder="Username">
+                            <span class="input-group-addon"><i class="fas fa-user"></i></span>
+                        </div>
+                    </div>
 
-            </fieldset>
-        </form>
-    </div>
-    <div class="section-wrapper">
-        <section class="container"></section>
-    </div>
-</main>
+                    <div class="form-group">
+                        <label>Checkboxes</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><input type="checkbox" id="checkbox1"></span>
+                            <label for="checkbox1"></label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Radio</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><input type="radio" id="radio1" name="radio-group"></span>
+                            <label for="radio1"></label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Button Addons</label>
+                        <div class="input-group">
+                            <button class="btn btn-primary">Go</button>
+                            <label></label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Button Addons</label>
+                        <div class="input-group">
+                            <button type="button" class="btn btn-success">Success</button>
+                            <label></label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Button Addons</label>
+                        <div class="input-group">
+                            <button type="button" class="btn btn-danger">Action</button>
+                            <label></label>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Input Validation -->
+            <section class="form-card full-width">
+                <h2>Input Validation</h2>
+                <form>
+                    <div class="form-group">
+                        <label>Input with Success</label>
+                        <input type="text" class="input-success" placeholder="Success! You've done it.">
+                        <div class="validation-message success">Success! You've done it.</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Input with Warning</label>
+                        <input type="text" class="input-warning" placeholder="Input text with warning">
+                        <div class="validation-message warning">Input text with warning</div>
+                    </div>
+                    <div class="form-group">
+                        <label>Input with Danger</label>
+                        <input type="text" class="input-danger" placeholder="Input text with danger">
+                        <div class="validation-message danger">Input text with danger</div>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Check Boxes -->
+            <section class="form-card">
+                <h2>Check Boxes</h2>
+                <form>
+                    <div class="form-group">
+                        <label>Check Boxes</label>
+                        <div class="checkbox-list">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="default-checkbox">
+                                <label for="default-checkbox">Default</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="checked-checkbox" checked>
+                                <label for="checked-checkbox">Checked</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="disable-unchecked-checkbox" disabled>
+                                <label for="disable-unchecked-checkbox">Disable Unchecked</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="disable-checked-checkbox" checked disabled>
+                                <label for="disable-checked-checkbox">Disable Checked</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Radio Boxes -->
+            <section class="form-card">
+                <h2>Radio Boxes</h2>
+                <form>
+                    <div class="form-group">
+                        <label>Radio Boxes</label>
+                        <div class="radio-list">
+                            <div class="radio-item">
+                                <input type="radio" id="default-radio">
+                                <label for="default-radio">Default</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="selected-radio" checked>
+                                <label for="selected-radio">Selected</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="disable-radio" disabled>
+                                <label for="disable-radio">Disable Radio</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="disable-selected-radio" checked disabled>
+                                <label for="disable-selected-radio">Disable Selected</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Vertical Form with Icon -->
+            <section class="form-card tagged-inputs">
+                <h2>Vertical Form with Icon</h2>
+                <form class="vertical-form">
+                    <div class="form-group">
+                        <label for="v-username">User Name*</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fas fa-user"></i></span>
+                            <input type="text" id="v-username" placeholder="User Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="v-password">Password*</label>
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fas fa-lock"></i></span>
+                            <input type="password" id="v-password" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox"> Remember Me
+                        </label>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="button" class="btn btn-secondary">Cancel</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- Horizontal Forms (Second) -->
+            <section class="form-card tagged-inputs">
+                <h2>Horizontal Forms</h2>
+                <form class="horizontal-form">
+                    <div class="form-group">
+                        <label for="h2-username">User Name*</label>
+                        <div class="input-wrapper">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fas fa-user"></i></span>
+                                <input type="text" id="h2-username" placeholder="User Name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="h2-password">Password*</label>
+                        <div class="input-wrapper">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fas fa-lock"></i></span>
+                                <input type="password" id="h2-password" placeholder="Password">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label></label>
+                        <div class="input-wrapper">
+                            <label class="checkbox-label">
+                                <input type="checkbox"> Remember Me
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-actions right">
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </main>
+</div>
+<script src="index.js"></script>
 </body>
 </html>
